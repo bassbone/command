@@ -4,6 +4,7 @@
 #include <time.h>
 
 void mew();
+void strrep();
 
 int main (int argc, char *argv[])
 {
@@ -21,11 +22,10 @@ int main (int argc, char *argv[])
     } else if ((fpr = fopen(argv[argc - 1], "r"))==NULL) {
         fprintf(stderr, "%s is not found.\n", argv[argc-1]);
         return 1;
-    } else {
     }
 
     srand((unsigned)time(NULL));
-    if (rand() % 2 == 1) {
+    if (rand() % 3 == 1) {
         mew();
         return 0;
     } else {
@@ -35,6 +35,9 @@ int main (int argc, char *argv[])
     }
 }
 
+/*
+ * mew
+ */
 void mew()
 {
     int cnt;
@@ -42,9 +45,7 @@ void mew()
 
     for (cnt = 1; cnt <= 30; cnt++) {
         printf("\r");
-        for (cnt2 = 0; cnt2 < cnt; cnt2++) {
-            printf(" ");
-        }
+        strrep(" ", cnt);
         printf("`(=^‥^)");
         fflush(stdout);
         usleep(50000);
@@ -52,3 +53,14 @@ void mew()
     printf(" < mew, mew, mew.\n");
 }
 
+/*
+ * strrep
+ * repeat string num times
+ */
+void strrep(char *str, int num)
+{
+    int cnt;
+    for (cnt = 0; cnt < num; cnt++) {
+        printf(str);
+    }
+}
