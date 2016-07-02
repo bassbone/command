@@ -19,7 +19,8 @@ int main (int argc, char *argv[])
         fprintf(stdout, "usage: cat [file or stdin]\n");
         return 0;
     } else if ((fpr = fopen(argv[argc - 1], "r"))==NULL) {
-        fprintf(stderr, "$sというファイルが見つかりません\n", argv[argc-1]);
+        fprintf(stderr, "%s is not found.\n", argv[argc-1]);
+        return 1;
     } else {
     }
 
