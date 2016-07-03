@@ -17,11 +17,11 @@ int main (int argc, char *argv[])
     if (fgets(buf, sizeof(buf), fpr) != NULL) {
         fprintf(stdout, "load average: ");
         tok = strtok(buf, " ");
-        fprintf(stdout, "%s, ", tok);
+        fprintf(stdout, "1min %s, ", tok);
         tok = strtok(NULL, " ");
-        fprintf(stdout, "%s, ", tok);
+        fprintf(stdout, "3min %s, ", tok);
         tok = strtok(NULL, " ");
-        fprintf(stdout, "%s\n", tok);
+        fprintf(stdout, "5min %s\n", tok);
     }
 }
 
