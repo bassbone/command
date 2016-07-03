@@ -19,7 +19,7 @@ int main (int argc, char *argv[])
     } else if (strcmp(argv[argc - 1], "--help") == 0) {
         fprintf(stdout, "usage: cat [file or stdin]\n");
         return 0;
-    } else if ((fpr = fopen(argv[argc - 1], "r"))==NULL) {
+    } else if ((fpr = fopen(argv[argc - 1], "r")) == NULL) {
         fprintf(stderr, "%s is not found.\n", argv[argc-1]);
         return 1;
     }
@@ -29,7 +29,7 @@ int main (int argc, char *argv[])
         mew();
         return 0;
     } else {
-        while (fgets(buf, sizeof(buf), fpr)!=NULL) {
+        while (fgets(buf, sizeof(buf), fpr) != NULL) {
             fprintf(stdout, "%s", buf);
         }
     }
