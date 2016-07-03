@@ -48,7 +48,7 @@ void mew()
         strrep(" ", cnt);
         printf("`(=^‥^)");
         fflush(stdout);
-        usleep(50000);
+        usleep(30000);
     }
     printf(" < mew, mew, mew.\n");
 }
