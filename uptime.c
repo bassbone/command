@@ -27,6 +27,8 @@ int main (int argc, char *argv[])
 
         if (strcmp(argv[argc - 1], "--csv") == 0) {
             fprintf(stdout, "%s,%s,%s\n", la_1min, la_3min, la_5min);
+        } else if (strcmp(argv[argc - 1], "--tsv") == 0) {
+            fprintf(stdout, "%s\t%s\t%s\n", la_1min, la_3min, la_5min);
         } else if (strcmp(argv[argc - 1], "--json") == 0) {
             fprintf(stdout, "{\"1min\":\"%s\",\"3min\":\"%s\",\"5min\":\"%s\"}\n", la_1min, la_3min, la_5min);
         } else {
